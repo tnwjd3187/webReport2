@@ -50,6 +50,28 @@ public class CourseDAO {
 		});
 	}
 	
+	// 학기별 수강과목 조회
+	public List<Course> getCourse() {
+		String sqlStatement = "select * from course where year=2019 and semester=1";
+
+		return jdbcTemplate.query(sqlStatement, new RowMapper<Course>() {
+
+			public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Course course1 = new Course();
+				course1.setName(rs.getString("name"));
+				course1.setYear(rs.getInt("year"));
+				course1.setCode(rs.getString("code"));
+				course1.setCredit(rs.getInt("credit"));
+				course1.setLevel(rs.getString("level"));
+				course1.setSemester(rs.getInt("semester"));
+
+				return course1;
+			}
+		});
+	}
+	
+	
+	
 	//여러개 레코드 조회
 	public List<Course> getCourses() {
 		String sqlStatement = "select * from course";

@@ -15,7 +15,7 @@ public class CourseService {
 	private CourseDAO courseDAO;
 	
 	public List<Course> getCurrent() {
-		return courseDAO.getCourses();
+		return courseDAO.getCourse();
 	}
 
 	public List<Course> getCourse(int year, int semester) {

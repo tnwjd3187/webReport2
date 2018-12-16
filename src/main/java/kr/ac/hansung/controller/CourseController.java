@@ -2,13 +2,9 @@ package kr.ac.hansung.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -97,19 +93,8 @@ public class CourseController {
 	
 	//course에 자동 바인딩됨
 	@RequestMapping("/docreate")
-	public String doCreate(Model model, @Valid Course course, BindingResult result) {
+	public String doCreate(Model model, Course course) {
 		
-		if(result.hasErrors()) {
-			System.out.println("===Form data does not validated");
-			List<ObjectError> errors = result.getAllErrors();
-			
-			for(ObjectError error:errors) {
-				System.out.println(error.getDefaultMessage());
-			}
-			
-			return "createCourse";
-		}
-
 		courseService.insert(course);
 		return "coursecreated";
 	}

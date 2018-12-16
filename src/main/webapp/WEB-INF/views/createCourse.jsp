@@ -12,9 +12,9 @@
 </head>
 <body>
 		
-		<sf:form method = "post" action = "${pageContext.request.contextPath}/docreate" modelAttribute="course">
+<sf:form method = "post" action = "${pageContext.request.contextPath}/docreate" modelAttribute="course">
 			<table class = "formtable">
-				<tr> <td class="label">Year: </td> <td> <sf:input  type="text" path = "year"/> </br>
+				<tr> <td class="label">Year: </td> <td> <sf:input  type="text" path = "year"/> <br>
 					<sf:errors path="year" class="error"/> </td> </tr>
 				<tr> <td class="label">Semester: </td> <td> <sf:input  type="text" path = "semester"/> <br>
 				 <sf:errors path="semester" class="error"/> </td> </tr>
