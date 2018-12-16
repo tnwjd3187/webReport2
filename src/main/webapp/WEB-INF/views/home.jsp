@@ -14,7 +14,7 @@
 	</p>
 
 	<p>
-		<a href="${pageContext.request.contextPath}/createCourse"> 수강신청 하기</a>
+		<a href="${pageContext.request.contextPath}/createCourse"> 수강신청</a>
 	</p>
 	
 		<p>
